@@ -1,0 +1,36 @@
+Creating the Documentation for the GIT
+
+First Install the Git hub whcih have both command line terminal and Graphical User Interface 
+
+Create a folder Just like "JavaForGIT" for instance and inside it create another foler name JavaFX_ProjectOne
+and now right click inside the JavaForGIT folder and choose git bash so Git terminal is opened.
+
+Before doing anything first create your Git account and create a Repository so you push all your project insidet that Repository . 
+Always give appropriate similar name to Repository similar to your Project File. Just instance Respository is Simple_JavaFX_Project
+than always try to push only JAVA FX file only on it. Since it is not mandatory but good practice for future reference.
+
+******************************************
+If you already have Repository in GitHub and you want to rename that goto On GitHub.com, navigate to the main page of the repository. 
+Under your repository name, click Settings on top right. Under the Repository Name heading, type the new name of your repository. Click Rename.
+
+****************************
+Video for GitHub https://www.youtube.com/watch?v=0v75Ze7Ukm8
+
+Now Git Bash Terminal build Git on it by using following command
+
+// create initailze git connector to github
+$git init
+(Initialized empty Git repository in C:/Users/kebib_000/Desktop/JavaForGIT/.git/)
+
+//add the folder to github by adding the repository link address
+$git remote add origin https://github.com/QuantamCode-1/Simple_JavaFx.git
+
+// to check type following command
+$git remote -v
+
+// now to add all file use dot . after add command
+$ git add .
+
+
+
+
