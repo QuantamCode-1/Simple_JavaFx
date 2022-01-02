@@ -78,3 +78,11 @@ user who input the detail
    
 </body>
 </html>
+
+// we are using the visual studio code are editor write our program and running in apache server using Xampp.
+// At first we create a project name php aslo called directory or folder and inside the project folder we created
+// a new php file name index with php extension "index.php"
+//  Since we are running in web server we used hypertext markup HTML and creating a very simple form with method REST of POST
+// and action we put our origin php file so when submit button is clicked the data will be display in our same page therefore 
+// action = "/php/index.php" we are inserting blackslash /infront of php meaning if there is any folder top of php that will 
+// aslo be included which indicating root directory. 

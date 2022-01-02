@@ -32,5 +32,113 @@ $git remote -v
 $ git add .
 
 
+$ git commit -m "First commit or whatever you want type in"
 
+$ git push origin master
+
+
+/***********************************************************************
+Sometime error occur when you use the same link address whose init folder is already
+created for that repository and trying to create new init and use same link 
+so following error will be throws.
+To push your folder files 
+
+
+Raj Bhandari@ChetBhandari MINGW64 ~/Desktop/JavaForGIT (master)
+$ git push origin master
+To https://github.com/QuantamCode-1/Simple_JavaFx.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/QuantamCode-1/Simple_JavaFx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+// To solove the above problem type the following command one by one and it will push the file to the repository
+
+$ git fetch origin master:tmp
+$ git rebase tmp
+$ git push origin HEAD:master
+$ git branch -D tmp
+
+
+// or you can use force to input the file into the repository
+
+git init
+git add README.md
+git add .
+git commit -m "first commit"
+git remote add origin 'https://github.com/QuantamCode-1/Simple_JavaFx.git'
+git push --force origin master
+
+/*****************************************************
+To delete the file or folder from the repository type following command
+
+goto inside the JavaForGIT folder and you will find your uploaded folder
+for instance in my case is JavaFX_DemoOne and inside that folder there is 
+file called JavaFX_SartSimpleFrame
+
+Now right click inside the JavaForGIT folder and open git bash terminla
+type:
+Raj Bhandari@ChetBhandari MINGW64 ~/Desktop/JavaForGIT (master)
+
+$ git remote -v
+
+//The follwoing message will be shown
+origin  https://github.com/QuantamCode-1/Simple_JavaFx.git (fetch)
+origin  https://github.com/QuantamCode-1/Simple_JavaFx.git (push)
+
+// to see the list of all files and folder inside the repository type following
+//command without using git command just ls -like
+
+$ ls -l
+
+//it will show following details for that respective repository
+total 5
+-rw-r--r-- 1 Raj Bhandari 197609 3811 Jan  2 01:34 Documentation_HowToUse_GIT
+drwxr-xr-x 1 Raj Bhandari 197609    0 Jan  2 01:21 JavaFX_DemoOne/
+drwxr-xr-x 1 Raj Bhandari 197609    0 Jan  1 21:53 JavaFX_ProjectOne/
+-rw-r--r-- 1 Raj Bhandari 197609  241 Jan  2 01:21 README.md
+
+// to remove the folder name that folder name in the last 
+$ git rm -r 'JavaFX_DemoOne'
+
+//this is display following status
+rm 'JavaFX_DemoOne/JavaFX_SartSimpleFrame'
+
+
+// now commit the git again.
+$ git commit -m "removed the JavaFX_SartSimpleFram from repository"
+
+[master df2f568] removed the JavaFX_SartSimpleFram from repository
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 JavaFX_DemoOne/JavaFX_SartSimpleFrame
+
+//final step now you have to push the master agian
+
+Raj Bhandari@ChetBhandari MINGW64 ~/Desktop/JavaForGIT (master)
+$ git push origin master
+
+//the following message will be display and the folder will be deleted from the rep
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 261 bytes | 261.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/QuantamCode-1/Simple_JavaFx.git
+   fd8c40e..df2f568  master -> master
+
+
+
+Extra Tips:
+***********************************************
+// to make and clone of repository use following command
+You can use the following command: First clone a fresh copy of your repo, using the --mirror flag:
+
+$ git clone --mirror git://example.com/some-big-repo.git
+
+//To clear the bash teriminal user the command "clear"
 
